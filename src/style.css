@@ -25,7 +25,6 @@ h2 {
 }
 
 /* Navegació */
-
 nav {
     background-color: #E9E7DC; /* Beix clar */
     padding: 15px;
@@ -75,7 +74,6 @@ section p, ul {
     color: #555; /* Gris suau */
 }
 
-
 /* Formulari */
 form {
     display: flex;
@@ -123,7 +121,49 @@ form textarea {
     font-size: 1rem; /* Text més clar i llegible dins del camp */
     border: 1px solid #ddd; /* Límit del camp */
     border-radius: 5px; /* Cantonades arrodonides */
-    width: 100%; /* Opcional: ajusta la mida dels camps */
+    width: 100%; /* Ajusta la mida dels camps */
     box-sizing: border-box; /* Evita desbordaments */
 }
 
+/* --------------------------------- */
+/* MEDIA QUERIES PER A DISPOSITIUS MÒBILS */
+/* --------------------------------- */
+@media (max-width: 768px) {
+    /* Reducció d'espais per a la navegació */
+    nav {
+        padding: 10px;
+    }
+    
+    nav a {
+        margin: 0 10px;
+        font-size: 1rem;
+    }
+
+    /* Ajustaments per al contenidor principal */
+    #main-page {
+        margin-top: 50px; /* Pot reduir-se si el menú és més petit */
+        padding: 20px;
+    }
+
+    /* Reducció de l'espai en seccions */
+    section {
+        padding: 60px 15px;
+        margin: 10px;
+        max-width: 100%; /* Amplada completa en petits dispositius */
+    }
+
+    /* Reducció de les mides de font en títols */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Formulari: reducció de la mida màxima i paddings */
+    form {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
