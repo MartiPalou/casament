@@ -50,6 +50,7 @@ nav a:hover {
     color: #5a3e01;
     text-decoration: underline;
 }
+
 #main-page {
     margin-top: 60px; /* Espai per sota del menú */
     padding: 30px;
@@ -60,7 +61,7 @@ section {
     padding: 90px 30px;
     margin: 20px auto;
     border-radius: 8px;
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Suavitat i elegància */
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  Suavitat i elegància */
     max-width: 800px; /* Amplada limitada */
 }
 
@@ -74,12 +75,13 @@ section p, ul {
     line-height: 1.6;
     color: #555; /* Gris suau */
 }
+
 /* Centrar l'horari */
 #horari {
     text-align: center;
 }
 
-* Secció 'dia i lloc' */
+/* Secció 'dia i lloc' */
 /* (Suposo que aquesta secció té l'ID "dia-lloc" i està configurada com a flex) */
 #dia-lloc {
     display: flex;
