@@ -18,43 +18,6 @@ function MainPage() {
         });
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-    
-        const apiURL = "https://script.google.com/macros/s/AKfycbzEVd8HjceZnh8MdBfvVFOu2uEG5obFNOLqXPxqYGzuEfg2kdwGXDqwgcuJsZZAPQ4i/exec"; // Canvia per la teva URL
-    
-        console.log("Enviant dades a:", apiURL);
-    
-        try {
-            const response = await fetch(apiURL, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
-            });
-    
-            console.log("Resposta rebuda:", response);
-    
-            if (!response.ok) {
-                throw new Error(`Error HTTP! Status: ${response.status}`);
-            }
-    
-            const data = await response.json();
-            console.log("Resposta JSON:", data);
-    
-            if (data.status === "success") {
-                alert("Gràcies per confirmar! Les teves dades han estat enviades.");
-            } else {
-                alert("Hi ha hagut un problema. Torna-ho a provar.");
-            }
-        } catch (error) {
-            console.error("Error en enviar les dades:", error);
-            alert("Error en enviar les dades. Siusplau, prova-ho més tard.");
-        }
-    };    
-    
-
     const sectionStyle = {
         display: "flex",
         justifyContent: "space-between",
