@@ -1,0 +1,129 @@
+/* Estil per al cos de la pàgina */
+body {
+    font-family: 'Lora', serif; /* Tipografia refinada per al text */
+    background-color: #FAF8F0; /* Fons elegant */
+    color: #333; /* Text gris fosc */
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif; /* Títols elegants */
+    color: #856404; /* Daurat per als títols */
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem; /* Mida destacada per al títol principal */
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Navegació */
+
+nav {
+    background-color: #E9E7DC; /* Beix clar */
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav a {
+    font-family: 'Playfair Display', serif; /* Tipografia dels enllaços */
+    margin: 0 20px;
+    color: #856404; /* Daurat elegant */
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav a:hover {
+    color: #5a3e01; /* Daurat més fosc en passar el ratolí */
+    text-decoration: underline;
+}
+
+#main-page {
+    margin-top: 60px; /* Espai per sota del menú */
+    padding: 30px;
+}
+
+section {
+    background-color: #FAF8F0; /* Fons blanc per les seccions */
+    padding: 90px 30px;
+    margin: 20px auto;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Suavitat i elegància */
+    max-width: 800px; /* Amplada limitada */
+}
+
+section h2 {
+    border-bottom: 2px solid #E9E7DC; /* Línia decorativa */
+    padding-bottom: 10px;
+}
+
+section p, ul {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555; /* Gris suau */
+}
+
+
+/* Formulari */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input, select, textarea, button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Lora', serif;
+}
+
+button {
+    background-color: #856404; /* Daurat suau */
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5a3e01; /* Daurat més fosc */
+}
+
+textarea {
+    resize: vertical;
+}
+
+form label {
+    display: block; /* Fa que cada etiqueta ocupi una línia */
+    margin-bottom: 15px; /* Espai entre cada etiqueta i el següent element */
+    font-size: 1rem; /* Ajusta la mida del text si ho desitges */
+}
+
+form input,
+form select,
+form textarea {
+    margin-top: 5px; /* Espai entre el text de l'etiqueta i el camp */
+    padding: 10px; /* Espai dins del camp */
+    font-size: 1rem; /* Text més clar i llegible dins del camp */
+    border: 1px solid #ddd; /* Límit del camp */
+    border-radius: 5px; /* Cantonades arrodonides */
+    width: 100%; /* Opcional: ajusta la mida dels camps */
+    box-sizing: border-box; /* Evita desbordaments */
+}
+
