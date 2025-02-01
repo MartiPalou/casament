@@ -5,7 +5,7 @@ import '../style.css';
 function MainPage() {
     const [formData, setFormData] = useState({
         name: "",
-        attending: "yes",
+        attending: "yes", // test commit 2
         plusOne: "no",
         kids: "no",
         allergies: "",
