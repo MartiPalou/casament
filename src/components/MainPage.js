@@ -93,7 +93,7 @@ function MainPage() {
 
       <section id="confirmacio">
         <h2>Confirmació d’assistència</h2>
-        {/* Modifiquem el formulari per a Netlify */}
+        {/* Modifiquem el formulari per a Netlify 2 */}
         <form
           name="confirmacio"
           method="POST"
