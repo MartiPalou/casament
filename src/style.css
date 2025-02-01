@@ -1,15 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
 /* Estil per al cos de la pàgina */
 body {
-    font-family: 'Lora', serif; /* Tipografia refinada per al text */
-    background-color: #FAF8F0; /* Fons elegant */
+    font-family: 'Amatic SC', cursive; /* Tipografia refinada per al text */
+    background-color: hsl(0, 0%, 100%); /* Fons elegant */
     color: #333; /* Text gris fosc */
     margin: 0;
     padding: 0;
 }
 
 h1, h2 {
-    font-family: 'Playfair Display', serif; /* Títols elegants */
-    color: #856404; /* Daurat per als títols */
+    font-family: 'Bebas Neue', serif; /* Títols elegants */
+    color: #195503; /* Daurat per als títols */
     text-align: center;
 }
 
@@ -26,7 +29,7 @@ h2 {
 
 /* Navegació */
 nav {
-    background-color: #E9E7DC; /* Beix clar */
+    background-color: #ffffff; /* Beix clar */
     padding: 15px;
     text-align: center; /* Centra el contingut */
     position: fixed;
@@ -39,15 +42,15 @@ nav {
 /* Assegura't que els enllaços siguin elements inline-block per respectar el centrament */
 nav a {
     display: inline-block;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Bebas Neue', serif;
     margin: 0 20px;
-    color: #856404;
+    color: #195503;
     text-decoration: none;
     font-size: 1.2rem;
 }
 
 nav a:hover {
-    color: #5a3e01;
+    color: #195503;
     text-decoration: underline;
 }
 
@@ -57,7 +60,7 @@ nav a:hover {
 }
 
 section {
-    background-color: #FAF8F0; /* Fons blanc per les seccions */
+    background-color: #f0faf0; /* Fons blanc per les seccions */
     padding: 90px 30px;
     margin: 20px auto;
     border-radius: 8px;
@@ -65,8 +68,9 @@ section {
     max-width: 800px; /* Amplada limitada */
 }
 
+
 section h2 {
-    border-bottom: 2px solid #E9E7DC; /* Línia decorativa */
+    border-bottom: 2px solid #c9e9be; /* Línia decorativa */
     padding-bottom: 10px;
 }
 
@@ -105,11 +109,11 @@ input, select, textarea, button {
     font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-family: 'Lora', serif;
+    font-family: 'Amatic SC', serif;
 }
 
 button {
-    background-color: #856404; /* Daurat suau */
+    background-color: #195503; /* Daurat suau */
     color: white;
     font-weight: bold;
     border: none;
@@ -117,7 +121,7 @@ button {
 }
 
 button:hover {
-    background-color: #5a3e01; /* Daurat més fosc */
+    background-color: #113b02; /* Daurat més fosc */
 }
 
 textarea {

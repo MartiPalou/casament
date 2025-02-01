@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import localitzacio from "../assets/localització.png";
+import vamohviendo from "../assets/Vamohviendo.png";
+import corElisa from "../assets/corElisa.png";
+import fentelburro from "../assets/fentelburro.png";
+import ok_Martí from "../assets/diailloc.png";
 import '../style.css';
 
 function MainPage() {
@@ -51,6 +55,16 @@ function MainPage() {
     marginBottom: "20px",
   };
 
+  const smallImageContainerStyle = {
+    textAlign: 'center', // Centra el contingut dins del contenidor
+  };
+
+  const smallImageStyle = {
+    maxWidth: '100px', // Limita l'amplada màxima de la imatge
+    width: '100%',     // La imatge ocuparà tot l'espai disponible fins al màxim definit
+    height: 'auto',    // Manté la proporció de la imatge
+  };
+
   const textContainerStyle = {
     flex: 1,
   };
@@ -60,14 +74,14 @@ function MainPage() {
     width: "300px",
     height: "200px",
     overflow: "hidden",
-    borderRadius: "8px",
-    boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
   };
 
   const imageStyle = {
     width: "100%",
     height: "100%",
     objectFit: "cover",
+    margin: 0,
+    padding: 0,
   };
 
   return (
@@ -75,32 +89,44 @@ function MainPage() {
       <section id="dia-lloc" style={sectionStyle}>
         <div style={textContainerStyle}>
           <h2>Dia i Lloc</h2>
-          <p>El nostre casament tindrà lloc el 15 de juny de 2024 a Can Ribes, Girona.</p>
+          <p>
+            El nostre casament tindrà lloc al <strong>Hotel Coma Bella</strong>, a Andorra, el proper <strong>20 de Setembre</strong> de 2025.
+          </p>
         </div>
+
         <div style={imageContainerStyle}>
           <img src={localitzacio} alt="Localització" style={imageStyle} />
         </div>
       </section>
 
       <section id="horari">
+        <div style={smallImageContainerStyle}>
+          <img src={fentelburro} alt="sticker_fentelburro" style={smallImageStyle} />
+        </div>
         <h2>Horari</h2>
         <ul>
-          <li>17:00h - Cerimònia</li>
-          <li>18:30h - Aperitiu</li>
-          <li>20:00h - Sopar</li>
+          <li>Cerimònia</li>
+          <li>Aperitiu</li>
+          <li>Dinar</li>
+          <li>Festa</li>
+          <li><small>Horari exacte TBD</small></li>
         </ul>
+        <div style={smallImageContainerStyle}>
+          <img src={vamohviendo} alt="sticker_vamohviendo" style={smallImageStyle} />
+        </div>
       </section>
 
       <section id="confirmacio">
+        <div style={smallImageContainerStyle}>
+          <img src={corElisa} alt="sticker_corelisa" style={smallImageStyle} />
+        </div>
         <h2>Confirmació d’assistència</h2>
-        {/* Modifiquem el formulari per a Netlify 2 */}
         <form
           name="confirmacio"
           method="POST"
           data-netlify="true"
           onSubmit={handleSubmit}
         >
-          {/* Camp ocult necessari perquè Netlify identifiqui el formulari */}
           <input type="hidden" name="form-name" value="confirmacio" />
 
           <label>
@@ -115,7 +141,7 @@ function MainPage() {
           </label>
 
           <label>
-            Assistiré:
+            Confirmo la meva assistència:
             <select
               name="attending"
               value={formData.attending}
@@ -151,6 +177,18 @@ function MainPage() {
           </label>
 
           <label>
+            Necessito allotjament:
+            <select
+              name="attending"
+              value={formData.attending}
+              onChange={handleChange}
+            >
+              <option value="yes">Sí</option>
+              <option value="no">No</option>
+            </select>
+          </label>
+
+          <label>
             Al·lèrgies o qüestions alimentàries:
             <textarea
               name="allergies"
@@ -159,6 +197,9 @@ function MainPage() {
             />
           </label>
 
+          <div style={smallImageContainerStyle}>
+            <img src={ok_Martí} alt="sticker_okmarti" style={smallImageStyle} />
+          </div>
           <button type="submit">Enviar</button>
         </form>
       </section>
