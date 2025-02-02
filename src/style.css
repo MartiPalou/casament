@@ -83,6 +83,7 @@ section p, ul {
     line-height: 1.6;
     color: #555; /* Gris suau */
     list-style-type: none;
+    padding-left: 0;
 }
 
 /* Centrar l'horari */
