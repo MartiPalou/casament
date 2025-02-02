@@ -12,7 +12,7 @@ function MainPage() {
   const [formData, setFormData] = useState({
     name: "",
     attending: "yes",
-    plusOne: "no",
+    allotjament: "no",
     kids: "no",
     allergies: "",
   });
@@ -42,7 +42,7 @@ function MainPage() {
         setFormData({
           name: "",
           attending: "yes",
-          plusOne: "no",
+          allotjament: "no",
           kids: "no",
           allergies: "",
         });
