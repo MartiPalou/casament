@@ -4,6 +4,8 @@ import vamohviendo from "../assets/Vamohviendo.png";
 import corElisa from "../assets/corElisa.png";
 import fentelburro from "../assets/fentelburro.png";
 import ok_Martí from "../assets/diailloc.png";
+import traje from "../assets/traje.png";
+import sombrero from "../assets/sombrero.png";
 import '../style.css';
 
 function MainPage() {
@@ -24,7 +26,7 @@ function MainPage() {
       .join("&");
   };
 
-  // Funció per gestionar l'enviament del formulari
+  // Funcie ó per gestionar l'enviament del formulari
   const handleSubmit = (e) => {
     e.preventDefault();
     // Enviem les dades al servidor (Netlify captura aquesta petició)
@@ -90,7 +92,7 @@ function MainPage() {
         <div style={textContainerStyle}>
           <h2>Dia i Lloc</h2>
           <p>
-            El nostre casament tindrà lloc al <strong>Hotel Coma Bella</strong>, a Andorra, el proper <strong>20 de Setembre</strong> de 2025.
+            El nostre casament tindrà lloc a l'<strong>Hotel Coma Bella</strong>, a Andorra, el proper <strong>20 de setembre</strong> de 2025.
           </p>
         </div>
 
@@ -116,6 +118,19 @@ function MainPage() {
         </div>
       </section>
 
+      <section id="DressCode">
+        <div style={smallImageContainerStyle}>
+          <img src={sombrero} alt="sticker_sombrero" style={smallImageStyle} />
+        </div>
+        <h2>DressCode</h2>
+        <p>
+            No hi ha dresscode estricte, però a veure, es un casament, vine guapet/a. 
+          </p>
+        <div style={smallImageContainerStyle}>
+          <img src={traje} alt="sticker_traje" style={smallImageStyle} />
+        </div>
+      </section>
+
       <section id="confirmacio">
         <div style={smallImageContainerStyle}>
           <img src={corElisa} alt="sticker_corelisa" style={smallImageStyle} />
@@ -130,7 +145,7 @@ function MainPage() {
           <input type="hidden" name="form-name" value="confirmacio" />
 
           <label>
-            Nom:
+            Nom i cognoms:
             <input
               type="text"
               name="name"
@@ -151,7 +166,7 @@ function MainPage() {
               <option value="no">No</option>
             </select>
           </label>
-
+          {/*
           <label>
             Vinc amb un +1:
             <select
@@ -163,6 +178,7 @@ function MainPage() {
               <option value="no">No</option>
             </select>
           </label>
+          */}
 
           <label>
             Porto criatures:
@@ -189,7 +205,7 @@ function MainPage() {
           </label>
 
           <label>
-            Al·lèrgies o qüestions alimentàries:
+            Al·lèrgies o qüestions alimentàries, o altres coses que ens vulguis dir:
             <textarea
               name="allergies"
               value={formData.allergies}

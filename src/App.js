@@ -8,7 +8,7 @@ function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const handlePasswordSubmit = (password) => {
-        if (password === "casament2024") {
+        if (password === "elisaimarti25") {
             setIsAuthenticated(true);
         } else {
             alert("Contrasenya incorrecta");
