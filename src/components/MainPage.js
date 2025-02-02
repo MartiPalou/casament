@@ -26,10 +26,8 @@ function MainPage() {
       .join("&");
   };
 
-  // Funcie ó per gestionar l'enviament del formulari
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Enviem les dades al servidor (Netlify captura aquesta petició)
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -38,10 +36,20 @@ function MainPage() {
         ...formData,
       }),
     })
-      .then(() => alert("Enviament correcte!"))
+      .then(() => {
+        alert("Enviament correcte!");
+        // Restableix els camps del formulari als valors per defecte
+        setFormData({
+          name: "",
+          attending: "yes",
+          plusOne: "no",
+          kids: "no",
+          allergies: "",
+        });
+      })
       .catch((error) => alert("Error en l'enviament: " + error));
   };
-
+  
   const handleChange = (e) => {
     setFormData({
       ...formData,
