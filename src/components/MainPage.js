@@ -203,8 +203,8 @@ function MainPage() {
           <label>
             Necessito allotjament:
             <select
-              name="attending"
-              value={formData.attending}
+              name="allotjament"
+              value={formData.allotjament}
               onChange={handleChange}
             >
               <option value="yes">Sí</option>
