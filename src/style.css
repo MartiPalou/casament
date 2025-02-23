@@ -3,24 +3,22 @@
 
 /* Estil per al cos de la pàgina */
 body {
-    font-family: 'Amatic SC', cursive; /* Tipografia refinada per al text */
-    background-color: hsl(0, 0%, 100%); /* Fons elegant */
-    color: #333; /* Text gris fosc */
+    font-family: 'Amatic SC', cursive;
+    background-color: hsl(0, 0%, 100%);
+    color: #333;
     margin: 0;
     padding: 0;
-    font-size: 200 px;
-
+    font-size: 200px;
 }
 
 h1, h2 {
-    font-family: 'Bebas Neue', serif; /* Títols elegants */
-    color: #195503; /* Daurat per als títols */
+    font-family: 'Bebas Neue', serif;
+    color: #195503;
     text-align: center;
-
 }
 
 h1 {
-    font-size: 3rem; /* Mida destacada per al títol principal */
+    font-size: 3rem;
     margin-top: 20px;
 }
 
@@ -30,50 +28,107 @@ h2 {
     margin-bottom: 15px;
 }
 
+h3 {
+    font-family: 'Amatic SC', serif;
+    font-size: 2.2rem;
+    color: #195503;
+    margin: 20px 0 10px;
+    text-align: center;
+}
+
+.faq-item h3 .triangle {
+    font-size: 1.2rem;
+    color: #195503;
+  }
+
+  #faqs {
+    overflow-anchor: none;
+  }
+
+  #faqs h3 {
+    text-align: left;
+  }
+
 /* Navegació */
 nav {
-    background-color: #ffffff; /* Beix clar */
+    background-color: #ffffff;
     padding: 15px;
-    text-align: center; /* Centra el contingut */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
     width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* Assegura't que els enllaços siguin elements inline-block per respectar el centrament */
-nav a {
+nav a.active {
+    
+    text-decoration: underline;
+    /*font-weight: bold;*/
+  }
+
+/* Logo (opcional) */
+.logo {
+    font-family: 'Bebas Neue', serif;
+    font-size: 2.5rem;
+    margin-left: 20px;
+    color: #195503;
+}
+
+/* Contenidor dels enllaços de navegació */
+.nav-links {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+/* Enllaços dins de la navegació */
+.nav-links a {
     display: inline-block;
     font-family: 'Bebas Neue', serif;
-    margin: 0 20px;
+    margin: 0px 10px;
     color: #195503;
     text-decoration: none;
     font-size: 2rem;
 }
 
-nav a:hover {
+.nav-links a:hover {
     color: #195503;
     text-decoration: underline;
 }
 
+/* Icona del menú burger (inicialment amagat) */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #195503;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Resta dels estils originals */
 #main-page {
-    margin-top: 60px; /* Espai per sota del menú */
+    margin-top: 60px;
     padding: 30px;
 }
 
 section {
-    background-color: #f0faf0; /* Fons blanc per les seccions */
+    background-color: #f0faf0;
     padding: 90px 30px;
     margin: 20px auto;
     border-radius: 8px;
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  Suavitat i elegància */
-    max-width: 800px; /* Amplada limitada */
+    max-width: 800px;
 }
 
-
 section h2 {
-    border-bottom: 2px solid #c9e9be; /* Línia decorativa */
+    border-bottom: 2px solid #c9e9be;
     padding-bottom: 10px;
     font-size: 2.5rem;
 }
@@ -81,18 +136,15 @@ section h2 {
 section p, ul {
     font-size: 2rem;
     line-height: 1.6;
-    color: #555; /* Gris suau */
+    color: #555;
     list-style-type: none;
     padding-left: 0;
 }
 
-/* Centrar l'horari */
 #horari {
     text-align: center;
 }
 
-/* Secció 'dia i lloc' */
-/* (Suposo que aquesta secció té l'ID "dia-lloc" i està configurada com a flex) */
 #dia-lloc {
     display: flex;
     justify-content: space-between;
@@ -104,7 +156,6 @@ section p, ul {
     text-align: center;
 }
 
-/* Formulari */
 form {
     display: flex;
     flex-direction: column;
@@ -122,7 +173,7 @@ input, select, textarea, button {
 }
 
 button {
-    background-color: #195503; /* Daurat suau */
+    background-color: #195503;
     color: white;
     font-weight: bold;
     border: none;
@@ -130,7 +181,7 @@ button {
 }
 
 button:hover {
-    background-color: #113b02; /* Daurat més fosc */
+    background-color: #113b02;
 }
 
 textarea {
@@ -138,69 +189,90 @@ textarea {
 }
 
 form label {
-    display: block; /* Fa que cada etiqueta ocupi una línia */
-    margin-bottom: 15px; /* Espai entre cada etiqueta i el següent element */
-    font-size: 2rem; /* Ajusta la mida del text si ho desitges */
+    display: block;
+    margin-bottom: 15px;
+    font-size: 2rem;
 }
 
 form input,
 form select,
 form textarea {
-    margin-top: 5px; /* Espai entre el text de l'etiqueta i el camp */
-    padding: 10px; /* Espai dins del camp */
-    font-size: 2rem; /* Text més clar i llegible dins del camp */
-    border: 1px solid #ddd; /* Límit del camp */
-    border-radius: 5px; /* Cantonades arrodonides */
-    width: 100%; /* Ajusta la mida dels camps */
-    box-sizing: border-box; /* Evita desbordaments */
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* MEDIA QUERIES PER A DISPOSITIUS MÒBILS */
 @media (max-width: 768px) {
-
-    /* Navegació: ajustem marges i tamany de font per a pantalles petites */
+    /* Augmentem el padding horitzontal per deixar marge als extrems */
     nav {
-        padding: 10px;
+        padding: 10px 0px;
     }
     
-    nav a {
-        margin: 0 10px;
+    /* Mostrem l'icona burger i li afegim marge dret perquè no quedi tallada */
+    .menu-icon {
+        display: block;
+        margin-right: 20px;
+    }
+    
+    /* Centrem el menú desplegable i limitem la seva amplada */
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        background-color: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in;
+    }
+    
+    .nav-links.open {
+        max-height: 300px;
+    }
+    
+    .nav-links a {
+        margin: 15px 0;
         font-size: 1.2rem;
     }
-
-    /* Ajustaments per al contenidor principal */
+    
+    .logo {
+        font-size: 2rem;
+    }
+    
     #main-page {
         margin-top: 50px;
         padding: 20px;
     }
 
-    /* Reducció de l'espai en seccions */
     section {
         padding: 60px 15px;
         margin: 10px;
         max-width: 100%;
     }
 
-    /* Formulari: reducció de la mida màxima i paddings */
     form {
         max-width: 100%;
         padding: 0 10px;
     }
     
-    /* Ajustaments per a la secció "dia i lloc" per canviar l'ordre:
-       - La imatge es mostra a sobre
-       - El text es mostra a sota */
     #dia-lloc {
         flex-direction: column;
     }
     
-    /* Suposant que dins de #dia-lloc tens dos divs: el primer amb el text i el segon amb la imatge */
     #dia-lloc > div:first-child {
-        order: 2;           /* El text passa a la part inferior */
-        text-align: center;  /* Centra el text */
+        order: 2;
+        text-align: center;
     }
     
     #dia-lloc > div:last-child {
-        order: 1;           /* La imatge passa a la part superior */
+        order: 1;
     }
 }

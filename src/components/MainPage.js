@@ -8,11 +8,85 @@ import traje from "../assets/traje.png";
 import sombrero from "../assets/sombrero.png";
 import '../style.css';
 
+function FAQAccordion() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const faqData = [
+    { 
+      question: "Puc fer una sorpresa aquell dia?", 
+      answer: "Si algú vol parlar aquell dia o fer alguna cosa sense que nosaltres ho sapiguem abans, pot contactar amb la Judit (+376 610625) 😊." 
+    },
+    { 
+      question: "Podem dormir a l'hotel?", 
+      answer: "Sí, tot i que no hi ha habitacions per tothom, si necessiteu allotjament digueu-ho al formulari. Es prioritzarà la gent que no té casa a Andorra." 
+    },
+    { 
+      question: "I si tinc casa a Andorra hi haurà bus per tornar?", 
+      answer: "Posarem un bus fins a Sant Julià i Andorra la Vella. Assegureu-vos d'haver-ho posat al formulari de confirmació si el necessiteu. Si cap d'aquestes dues opcions us funciona feu-nos-ho saber." 
+    },
+    { 
+      question: "Hi ha Dresscode?", 
+      answer: "No hi ha dresscode estricte, però a veure, es un casament, vine guapet/a." 
+    },
+    { 
+      question: "Hi ha pàrquing?", 
+      answer: "Sí, al mateix hotel." 
+    },
+
+  ];
+
+  const handleToggle = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <section id="faqs">
+      <div className="faq-top-image" style={{ textAlign: 'center', marginBottom: '20px' }}>
+        <img src={sombrero} alt="FAQ Top" style={{ maxWidth: '100px', height: 'auto' }} />
+      </div>
+
+      <h2>FAQs</h2>
+
+      {faqData.map((item, index) => (
+        <div className={`faq-item ${openIndex === index ? 'open' : ''}`} key={index}>
+          <h3 
+            onClick={() => handleToggle(index)} 
+            style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+          >
+            <span 
+              className="triangle" 
+              style={{ marginRight: '8px', transition: 'transform 0.3s' }}
+            >
+              {openIndex === index ? '▼' : '►'}
+            </span>
+            {item.question}
+          </h3>
+          {item.image && (
+            <div className="faq-image" style={{ textAlign: 'center', margin: '10px 0' }}>
+              <img 
+                src={item.image} 
+                alt={item.imageAlt || 'FAQ Image'} 
+                style={{ maxWidth: '100px', width: '100%', height: 'auto' }} 
+              />
+            </div>
+          )}
+          {openIndex === index && <p>{item.answer}</p>}
+        </div>
+      ))}
+
+      <div className="faq-top-image" style={{ textAlign: 'center', marginBottom: '20px' }}>
+        <img src={traje} alt="FAQ Top" style={{ maxWidth: '100px', height: 'auto' }} />
+      </div>
+    </section>
+  );
+}
+
 function MainPage() {
   const [formData, setFormData] = useState({
     name: "",
     attending: "yes",
     allotjament: "no",
+    transport: "-",
     kids: "no",
     allergies: "",
   });
@@ -43,6 +117,7 @@ function MainPage() {
           name: "",
           attending: "yes",
           allotjament: "no",
+          transport: "-",
           kids: "no",
           allergies: "",
         });
@@ -115,9 +190,10 @@ function MainPage() {
         </div>
         <h2>Horari</h2>
         <ul>
-          <li>Cerimònia</li>
-          <li>Aperitiu</li>
-          <li>Dinar</li>
+
+          <li>12.30 - Cerimònia</li>
+          <li>13.00h - Aperitiu</li>
+          <li>14.00h - Dinar</li>
           <li>Festa</li>
           <li><small>Horari exacte TBD</small></li>
         </ul>
@@ -125,7 +201,7 @@ function MainPage() {
           <img src={vamohviendo} alt="sticker_vamohviendo" style={smallImageStyle} />
         </div>
       </section>
-
+      {/* 
       <section id="DressCode">
         <div style={smallImageContainerStyle}>
           <img src={sombrero} alt="sticker_sombrero" style={smallImageStyle} />
@@ -137,7 +213,9 @@ function MainPage() {
         <div style={smallImageContainerStyle}>
           <img src={traje} alt="sticker_traje" style={smallImageStyle} />
         </div>
-      </section>
+      </section> */}
+
+      <FAQAccordion />
 
       <section id="confirmacio">
         <div style={smallImageContainerStyle}>
@@ -174,19 +252,6 @@ function MainPage() {
               <option value="no">No</option>
             </select>
           </label>
-          {/*
-          <label>
-            Vinc amb un +1:
-            <select
-              name="plusOne"
-              value={formData.plusOne}
-              onChange={handleChange}
-            >
-              <option value="yes">Sí</option>
-              <option value="no">No</option>
-            </select>
-          </label>
-          */}
 
           <label>
             Porto criatures:
@@ -213,6 +278,22 @@ function MainPage() {
           </label>
 
           <label>
+            Dormiré a casa i necessito transport (si res t'encaixa avisa'ns):
+            <select
+              name="transport"
+              value={formData.transport}
+              onChange={handleChange}
+            >
+              <option value="guió">-</option>
+              <option value="Andorra la Vella">Andorra la Vella</option>
+              <option value="Sant Julià">Sant Julià</option>
+              <option value="Transport privat">Vindré amb transport privat</option>
+              <option value="No ho sap">No sé on dormiré</option>
+              
+            </select>
+          </label>
+
+          <label>
             Al·lèrgies o qüestions alimentàries, o altres coses que ens vulguis dir:
             <textarea
               name="allergies"
@@ -227,6 +308,8 @@ function MainPage() {
           <button type="submit">Enviar</button>
         </form>
       </section>
+
+
     </div>
   );
 }
