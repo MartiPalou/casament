@@ -141,7 +141,7 @@ function MainPage() {
   };
 
   const smallImageContainerStyle = {
-    textAlign: 'center', // Centra el contingut dins del contenidor
+    textAlign: 'center', // Centra el contingut dins del contenidor haha
   };
 
   const smallImageStyle = {
